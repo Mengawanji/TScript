@@ -1,0 +1,14 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const Button_1 = require("../ui/Button");
+const CalculatorKey = ({ children, onClick, variant = 'primary', size = 'medium', className = '', }) => {
+    return (<Button_1.Button variant={variant} size={size} onClick={onClick} className={`calculator-key ${className}`}>
+      {children}
+    </Button_1.Button>);
+};
+exports.default = CalculatorKey;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2FsY3VsYXRvcktleS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNhbGN1bGF0b3JLZXkudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUEsa0RBQTBCO0FBQzFCLHlDQUFzQztBQVVwQyxNQUFNLGFBQWEsR0FBaUMsQ0FBQyxFQUNyRCxRQUFRLEVBQ1IsT0FBTyxFQUNQLE9BQU8sR0FBRyxTQUFTLEVBQ25CLElBQUksR0FBRyxRQUFRLEVBQ2YsU0FBUyxHQUFHLEVBQUUsR0FDZixFQUFFLEVBQUU7SUFDSCxPQUFPLENBQ0wsQ0FBQyxlQUFNLENBQ0wsT0FBTyxDQUFDLENBQUMsT0FBTyxDQUFDLENBQ2pCLElBQUksQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUNYLE9BQU8sQ0FBQyxDQUFDLE9BQU8sQ0FBQyxDQUNqQixTQUFTLENBQUMsQ0FBQyxrQkFBa0IsU0FBUyxFQUFFLENBQUMsQ0FFekM7TUFBQSxDQUFDLFFBQVEsQ0FDWDtJQUFBLEVBQUUsZUFBTSxDQUFDLENBQ1YsQ0FBQztBQUNKLENBQUMsQ0FBQztBQUVGLGtCQUFlLGFBQWEsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyBCdXR0b24gfSBmcm9tICcuLi91aS9CdXR0b24nO1xuXG5pbnRlcmZhY2UgQ2FsY3VsYXRvcktleVByb3BzIHtcbiAgY2hpbGRyZW46IFJlYWN0LlJlYWN0Tm9kZTtcbiAgb25DbGljazogKCkgPT4gdm9pZDtcbiAgdmFyaWFudD86ICdwcmltYXJ5JyB8ICdzZWNvbmRhcnknIHwgJ2FjY2VudCc7XG4gIHNpemU/OiAnc21hbGwnIHwgJ21lZGl1bScgfCAnbGFyZ2UnO1xuICBjbGFzc05hbWU/OiBzdHJpbmc7XG59XG5cbiAgY29uc3QgQ2FsY3VsYXRvcktleTogUmVhY3QuRkM8Q2FsY3VsYXRvcktleVByb3BzPiA9ICh7XG4gIGNoaWxkcmVuLFxuICBvbkNsaWNrLFxuICB2YXJpYW50ID0gJ3ByaW1hcnknLFxuICBzaXplID0gJ21lZGl1bScsXG4gIGNsYXNzTmFtZSA9ICcnLFxufSkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxCdXR0b25cbiAgICAgIHZhcmlhbnQ9e3ZhcmlhbnR9XG4gICAgICBzaXplPXtzaXplfVxuICAgICAgb25DbGljaz17b25DbGlja31cbiAgICAgIGNsYXNzTmFtZT17YGNhbGN1bGF0b3Ita2V5ICR7Y2xhc3NOYW1lfWB9XG4gICAgPlxuICAgICAge2NoaWxkcmVufVxuICAgIDwvQnV0dG9uPlxuICApO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgQ2FsY3VsYXRvcktleTsiXX0=

@@ -1,0 +1,16 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const Display_1 = require("../ui/Display");
+const calculator_1 = require("../../utils/calculator");
+const CalculatorDisplay = ({ previousOperand, currentOperand, operator, }) => {
+    return (<div className="calculator-display-container">
+      <Display_1.Display value={(0, calculator_1.formatOperand)(previousOperand) + (operator || '')} className="calculator-display-secondary"/>
+      <Display_1.Display value={(0, calculator_1.formatOperand)(currentOperand)} className="calculator-display-primary"/>
+    </div>);
+};
+exports.default = CalculatorDisplay;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2FsY3VsYXRvckRpc3BsYXkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJDYWxjdWxhdG9yRGlzcGxheS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQSxrREFBMEI7QUFDMUIsMkNBQXdDO0FBQ3hDLHVEQUF1RDtBQVFyRCxNQUFNLGlCQUFpQixHQUFxQyxDQUFDLEVBQzdELGVBQWUsRUFDZixjQUFjLEVBQ2QsUUFBUSxHQUNULEVBQUUsRUFBRTtJQUNILE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsOEJBQThCLENBQzNDO01BQUEsQ0FBQyxpQkFBTyxDQUNOLEtBQUssQ0FBQyxDQUFDLElBQUEsMEJBQWEsRUFBQyxlQUFlLENBQUMsR0FBRyxDQUFDLFFBQVEsSUFBSSxFQUFFLENBQUMsQ0FBQyxDQUN6RCxTQUFTLENBQUMsOEJBQThCLEVBRTFDO01BQUEsQ0FBQyxpQkFBTyxDQUNOLEtBQUssQ0FBQyxDQUFDLElBQUEsMEJBQWEsRUFBQyxjQUFjLENBQUMsQ0FBQyxDQUNyQyxTQUFTLENBQUMsNEJBQTRCLEVBRTFDO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFDO0FBQ0osQ0FBQyxDQUFDO0FBRUYsa0JBQWdCLGlCQUFpQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IERpc3BsYXkgfSBmcm9tICcuLi91aS9EaXNwbGF5JztcbmltcG9ydCB7IGZvcm1hdE9wZXJhbmQgfSBmcm9tICcuLi8uLi91dGlscy9jYWxjdWxhdG9yJztcblxuaW50ZXJmYWNlIENhbGN1bGF0b3JEaXNwbGF5UHJvcHMge1xuICBwcmV2aW91c09wZXJhbmQ6IHN0cmluZztcbiAgY3VycmVudE9wZXJhbmQ6IHN0cmluZztcbiAgb3BlcmF0b3I6IHN0cmluZyB8IG51bGw7XG59XG5cbiAgY29uc3QgQ2FsY3VsYXRvckRpc3BsYXk6IFJlYWN0LkZDPENhbGN1bGF0b3JEaXNwbGF5UHJvcHM+ID0gKHtcbiAgcHJldmlvdXNPcGVyYW5kLFxuICBjdXJyZW50T3BlcmFuZCxcbiAgb3BlcmF0b3IsXG59KSA9PiB7XG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJjYWxjdWxhdG9yLWRpc3BsYXktY29udGFpbmVyXCI+XG4gICAgICA8RGlzcGxheSBcbiAgICAgICAgdmFsdWU9e2Zvcm1hdE9wZXJhbmQocHJldmlvdXNPcGVyYW5kKSArIChvcGVyYXRvciB8fCAnJyl9IFxuICAgICAgICBjbGFzc05hbWU9XCJjYWxjdWxhdG9yLWRpc3BsYXktc2Vjb25kYXJ5XCJcbiAgICAgIC8+XG4gICAgICA8RGlzcGxheSBcbiAgICAgICAgdmFsdWU9e2Zvcm1hdE9wZXJhbmQoY3VycmVudE9wZXJhbmQpfSBcbiAgICAgICAgY2xhc3NOYW1lPVwiY2FsY3VsYXRvci1kaXNwbGF5LXByaW1hcnlcIlxuICAgICAgLz5cbiAgICA8L2Rpdj5cbiAgKTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0ICBDYWxjdWxhdG9yRGlzcGxheTsiXX0=
