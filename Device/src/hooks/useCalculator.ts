@@ -125,7 +125,7 @@ function calculatorReducer(state: CalculatorState, action: CalculatorAction): Ca
   }
 }
 
-export  default function useCalculator() {
+export function useCalculator() {
   const [state, dispatch] = useReducer(calculatorReducer, initialState);
 
   return {

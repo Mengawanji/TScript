@@ -2,14 +2,10 @@
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2023",
+    "lib": ["ES2023"],
     "module": "ESNext",
-    "types": [],
+    "types": ["node"],
     "skipLibCheck": true,
-    "lib": ["DOM", "ESNext"],
-    // "jsx": "react-jsx",
-    "allowJs": true,
-    "esModuleInterop": true,
-
 
     /* Bundler mode */
     "moduleResolution": "bundler",
