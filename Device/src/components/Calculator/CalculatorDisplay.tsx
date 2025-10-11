@@ -1,6 +1,6 @@
 import React from 'react';
 import { Display } from '../ui/Display';
-import { formatOperand } from '../../../utils/calculator';
+import { formatOperand } from '../../utils/calculator';
 
 interface CalculatorDisplayProps {
   previousOperand: string;

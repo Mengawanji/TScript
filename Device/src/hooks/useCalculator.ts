@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { CalculatorState, CalculatorAction, Operator } from '../types/calculator';
+import type { CalculatorState, CalculatorAction, Operator } from '../types/calculator';
 import { calculateResult, initialState } from '../utils/calculator';
 
 function calculatorReducer(state: CalculatorState, action: CalculatorAction): CalculatorState {

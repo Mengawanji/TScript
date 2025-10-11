@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCalculator } from '../../../hooks/useCalculator';
+import { useCalculator } from '../../hooks/useCalculator';
 import { CalculatorDisplay } from './CalculatorDisplay';
 import { CalculatorKey } from './CalculatorKey';
 
