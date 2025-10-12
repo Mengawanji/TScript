@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import type { CalculatorState, CalculatorAction, Operator } from '../types/calculator';
-import { calculateResult, initialState } from '../utils/calculator';
+import { calculateResult, initialState, MAX_DIGITS, canAddDigit } from '../utils/calculator';
 
 function calculatorReducer(state: CalculatorState, action: CalculatorAction): CalculatorState {
   switch (action.type) {
@@ -11,6 +11,11 @@ function calculatorReducer(state: CalculatorState, action: CalculatorAction): Ca
           currentOperand: action.payload,
           overwrite: false,
         };
+      }
+
+      // Prevent adding more digits than display can handle
+      if (!canAddDigit(state.currentOperand, action.payload)) {
+        return state;
       }
 
       if (action.payload === '0' && state.currentOperand === '0') {
@@ -38,6 +43,10 @@ function calculatorReducer(state: CalculatorState, action: CalculatorAction): Ca
         return state;
       }
 
+      if (state.currentOperand === 'Error') {
+        return initialState;
+      }
+
       if (state.previousOperand === '') {
         return {
           ...state,
@@ -54,13 +63,15 @@ function calculatorReducer(state: CalculatorState, action: CalculatorAction): Ca
         };
       }
 
+      const result = calculateResult(
+        state.previousOperand,
+        state.currentOperand,
+        state.operator
+      );
+
       return {
         ...state,
-        previousOperand: calculateResult(
-          state.previousOperand,
-          state.currentOperand,
-          state.operator
-        ),
+        previousOperand: result,
         operator: action.payload,
         currentOperand: '',
       };
@@ -69,7 +80,7 @@ function calculatorReducer(state: CalculatorState, action: CalculatorAction): Ca
       return initialState;
 
     case 'DELETE_DIGIT':
-      if (state.overwrite) {
+      if (state.overwrite || state.currentOperand === 'Error') {
         return {
           ...initialState,
         };
@@ -92,28 +103,32 @@ function calculatorReducer(state: CalculatorState, action: CalculatorAction): Ca
         return state;
       }
 
+      const evaluationResult = calculateResult(
+        state.previousOperand,
+        state.currentOperand,
+        state.operator
+      );
+
       return {
         ...state,
         overwrite: true,
         previousOperand: '',
         operator: null,
-        currentOperand: calculateResult(
-          state.previousOperand,
-          state.currentOperand,
-          state.operator
-        ),
+        currentOperand: evaluationResult,
       };
 
     case 'PERCENTAGE':
-      if (state.currentOperand === '') return state;
+      if (state.currentOperand === '' || state.currentOperand === 'Error') return state;
+      
+      const percentageResult = (parseFloat(state.currentOperand) / 100).toString();
       
       return {
         ...state,
-        currentOperand: (parseFloat(state.currentOperand) / 100).toString(),
+        currentOperand: canAddDigit(percentageResult, '') ? percentageResult : 'Error',
       };
 
     case 'NEGATE':
-      if (state.currentOperand === '') return state;
+      if (state.currentOperand === '' || state.currentOperand === 'Error') return state;
       
       return {
         ...state,

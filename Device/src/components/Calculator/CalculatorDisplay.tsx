@@ -13,14 +13,16 @@ export const CalculatorDisplay: React.FC<CalculatorDisplayProps> = ({
   currentOperand,
   operator,
 }) => {
+  const formattedPrevious = formatOperand(previousOperand);
+  const formattedCurrent = formatOperand(currentOperand);
+
   return (
     <div className="calculator-display-container">
+      <div className="calculator-display-secondary">
+        {formattedPrevious} {operator || ''}
+      </div>
       <Display 
-        value={formatOperand(previousOperand) + (operator || '')} 
-        className="calculator-display-secondary"
-      />
-      <Display 
-        value={formatOperand(currentOperand)} 
+        value={formattedCurrent} 
         className="calculator-display-primary"
       />
     </div>

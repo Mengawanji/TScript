@@ -3,6 +3,9 @@
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .calculator-display-container {
@@ -15,6 +18,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
 }
 
 .calculator-display-primary {
@@ -23,6 +29,11 @@
   color: white;
   word-wrap: break-word;
   word-break: break-all;
+  overflow-wrap: break-word;
+  line-height: 1.2;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .calculator-display-secondary {
@@ -30,6 +41,26 @@
   color: #888;
   margin-bottom: 10px;
   min-height: 1.5em;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Dynamic font sizing for large numbers */
+.calculator-display-primary.large-number {
+  font-size: 2rem;
+}
+
+.calculator-display-primary.very-large-number {
+  font-size: 1.5rem;
+}
+
+.calculator-display-primary.scientific-notation {
+  font-size: 1.8rem;
 }
 
 .calculator-grid {
@@ -48,28 +79,79 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 60px;
 }
 
 .calculator-btn:active {
   transform: scale(0.95);
 }
 
+.calculator-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .calculator-key.col-span-2 {
   grid-column: span 2;
+}
+
+/* Error state */
+.calculator-display-primary.error {
+  color: #ff6b6b;
+  font-size: 1.8rem;
 }
 
 /* Responsive design */
 @media (max-width: 480px) {
   .calculator {
     padding: 15px;
+    max-width: 350px;
   }
   
   .calculator-display-primary {
     font-size: 2rem;
   }
   
+  .calculator-display-primary.large-number {
+    font-size: 1.6rem;
+  }
+  
+  .calculator-display-primary.very-large-number {
+    font-size: 1.3rem;
+  }
+  
+  .calculator-display-primary.scientific-notation {
+    font-size: 1.4rem;
+  }
+  
+  .calculator-display-primary.error {
+    font-size: 1.5rem;
+  }
+  
   .calculator-btn {
     font-size: 1.1rem;
-    padding: 15px 10px;
+    min-height: 50px;
+  }
+  
+  .calculator-display-container {
+    min-height: 100px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 350px) {
+  .calculator {
+    max-width: 300px;
+    padding: 10px;
+  }
+  
+  .calculator-display-primary {
+    font-size: 1.8rem;
+  }
+  
+  .calculator-btn {
+    font-size: 1rem;
+    min-height: 45px;
   }
 }
